@@ -34,7 +34,7 @@ df = pd.read_excel("KateTestDirectory.xlsx")
 #st.write(df.columns.tolist())
 #===== CHOOSE WHICH TYPES CAN SHARE TUBES =====
 
-st.title("Testing program")
+st.title("Lab Calculator for Medical Assistants")
 st.header("created by Katherine Dubovi")
 st.divider()
 st.subheader("What can this tool do?")
