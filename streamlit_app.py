@@ -33,7 +33,7 @@ df = pd.read_excel("KateTestDirectory.xlsx")
 # st.write(df.head())
 #st.write(df.columns.tolist())
 #===== CHOOSE WHICH TYPES CAN SHARE TUBES =====
-
+st.set_page_config(layout="wide")
 st.title("Lab Calculator for Medical Assistants")
 st.header("created by Katherine Dubovi")
 st.divider()
@@ -383,3 +383,5 @@ if show_details == True:
 st.divider()
 st.write("Find something that doesn't look correct? Email Kate at katherinedubovi@centraloutreach.com.")
 st.write("Data used for this program was acquired from the Quest Diagnostics Test Directory. In an abundence of caution, labs use preferred specimen size rather than minimum specimen size. In some cases, a smaller specimen is acceptable.")
+st.divider()
+st.markdown(":gray[© 2026 Katherine Dubovi. All Rights Reserved.]")
