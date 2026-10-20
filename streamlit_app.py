@@ -28,7 +28,7 @@ import math
 #===== INITIALIZE EMPTY DATAFRAMES FOR LATER USE ====
 red_paired = pd.DataFrame()
 sst_paired = pd.DataFrame()
-purple_paired = pd.Dataframe()
+purple_paired = pd.DataFrame()
 #===== IMPORT THE REAL DATA =====
 
 df = pd.read_excel("KateTestDirectory.xlsx")
