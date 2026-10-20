@@ -337,8 +337,12 @@ if len(match) > 0:
         ### Special Collection Instructions ###
         purple_paired_notes = pd.DataFrame()
         purple_exclusive_notes = pd.DataFrame()
-        purple_paired_notes = purple_paired[purple_paired.iloc[:,5].notna()]
-        purple_exclusive_notes = pd.concat([exclusive_small_purple[exclusive_small_purple.iloc[:,5].notna()], exclusive_big_purple[exclusive_big_purple.iloc[:,5].notna()]])
+        if len(purple_paired) > 0:    
+            purple_paired_notes = purple_paired[purple_paired.iloc[:,5].notna()]
+        if len(exclusive_small_purple) > 0:
+            purple_exclusive_notes = exclusive_small_purple[exclusive_small_purple.iloc[:,5].notna()]
+        if len(exclusive_big_purple) > 0:
+            purple_exclusive_notes = pd.concat([purple_exclusive_notes, exclusive_big_purple[exclusive_big_purple.iloc[:,5].notna()]])
         if len(purple_paired_notes) > 0 or len(purple_exclusive_notes) > 0:
             with st.expander('EDTA Special collection notes: '):
                 if len(purple_paired_notes) > 0:
