@@ -27,7 +27,7 @@ import math
 
 #===== INITIALIZE EMPTY DATAFRAMES FOR LATER USE ====
 red_paired = pd.DataFrame()
-sst_paired = pd.DataFrame()
+SST_paired = pd.DataFrame()
 purple_paired = pd.DataFrame()
 #===== IMPORT THE REAL DATA =====
 
@@ -213,9 +213,6 @@ if len(match) > 0:
         #st.write(sorted_pairable_SST)
         while len(sorted_pairable_red) > 1:
             
-            # ~~~~~THIS NEXT LINE WILL NEED CHANGED WHEN REAL DATA IS IMPORTED ~~~~~
-            # omg im a genius. thank christ I wrote that
-
             if sorted_pairable_red.iloc[0,3]+sorted_pairable_red.iloc[len(sorted_pairable_red)-1,3] <= 3:
                 #st.write(sorted_pairable_red)
                #  st.write('-2')
@@ -324,8 +321,9 @@ if len(match) > 0:
                     exclusive_big_purple = pd.concat([exclusive_big_purple,sorted_pairable_purple.iloc[[len(sorted_pairable_purple)-1]]])
                     sorted_pairable_purple = sorted_pairable_purple.iloc[:-1]
                     big_purple_count += 1
-
+        if big_purple_count > 0:
             st.write(f"**Total Big Purple Tubes:**", big_purple_count)
+        if small_purple_count > 0:
             st.write(f"**Total Small Purple Tubes:**", small_purple_count)
             if show_details == True:
                 if len(purple_paired) != 0:
