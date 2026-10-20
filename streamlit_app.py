@@ -25,6 +25,10 @@ import math
 #df = pd.DataFrame([[198, 1,'R', False],[567, 2,'R', False],[110, 5,'R', False], [909, 1,'P', False], [261, 6,'P', True], [611, 4,'R', False], [500, 2, 'R', True], [510, 3, 'P',True], [622, 1, 'P', False]], columns=['ID','Quant','Type', 'exclusive'])
 #st.dataframe(df)
 
+#===== INITIALIZE EMPTY DATAFRAMES FOR LATER USE ====
+red_paired = pd.DataFrame()
+sst_paired = pd.DataFrame()
+purple_paired = pd.Dataframe()
 #===== IMPORT THE REAL DATA =====
 
 df = pd.read_excel("KateTestDirectory.xlsx")
@@ -131,7 +135,6 @@ if len(match) > 0:
     
     pairable_SST = match[(match['Can Combine']!='N') & (match['Tube']=='SST')]
     if len(pairable_SST) > 0:
-        SST_paired = pd.DataFrame()
         sorted_pairable_SST = pairable_SST.sort_values(by='Volume (ml)')
         #st.write(sorted_pairable_SST)
         while len(sorted_pairable_SST) > 1:
@@ -206,7 +209,6 @@ if len(match) > 0:
 
     pairable_red = match[(match['Can Combine']!='N') & (match['Tube']=='Red')]
     if len(pairable_red) > 0:
-        red_paired = pd.DataFrame()
         sorted_pairable_red = pairable_red.sort_values(by='Volume (ml)')
         #st.write(sorted_pairable_SST)
         while len(sorted_pairable_red) > 1:
@@ -280,7 +282,6 @@ if len(match) > 0:
         pairable_purple = match[(match['Can Combine']!='N') & (match['Tube']=='EDTA')]
       
         if len(pairable_purple) > 0:
-            purple_paired = pd.DataFrame()
             sorted_pairable_purple = pairable_purple.sort_values(by='Volume (ml)')
 
             while len(sorted_pairable_purple) > 1:
